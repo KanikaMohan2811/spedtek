@@ -252,7 +252,7 @@
     // Add parallax effect
     const container = document.getElementById('tsparticles');
     document.addEventListener('mousemove', (e) => {
-      const strength = 20; // adjust strength of parallax
+      const strength = 200; // adjust strength of parallax
       const x = (e.clientX / window.innerWidth - 0.5) * strength;
       const y = (e.clientY / window.innerHeight - 0.5) * strength;
       container.style.transform = `translate(${x}px, ${y}px)`;
