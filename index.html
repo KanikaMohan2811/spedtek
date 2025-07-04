@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPEDTEK | Smart IT for Businesses</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    #tsparticles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background-color: #0f172a;
+      pointer-events: none;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+    }
+
+    #scrollToTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #10b981;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 9999px;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body class="transition-colors duration-300 bg-slate-900 text-slate-100">
+<div id="tsparticles"></div>
+
+
+
+<!-- Navbar -->
+<header class="sticky top-0 z-50 bg-gradient-to-r from-slate-800 via-indigo-900 to-slate-900 shadow-lg backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex items-center space-x-2">
+        <svg class="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+        </svg>
+        <span class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400">SPEDTEK</span>
+      </div>
+      <nav class="hidden md:flex space-x-8 text-slate-100 font-medium">
+        <a href="#services" class="hover:text-emerald-400 transition">Services</a>
+        <a href="#about" class="hover:text-emerald-400 transition">About</a>
+        <a href="#contact" class="hover:text-emerald-400 transition">Contact</a>
+        <a href="#get-started" class="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-full shadow transition">Get Started</a>
+      </nav>
+      <div class="md:hidden">
+        <button id="mobileMenuBtn" class="text-white focus:outline-none">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        
+      </div>
+    </div>
+  </div>
+  <div id="mobileMenu" class="md:hidden hidden px-6 pb-4 space-y-2">
+    <a href="#services" class="block text-white hover:text-emerald-400">Services</a>
+    <a href="#about" class="block text-white hover:text-emerald-400">About</a>
+    <a href="#contact" class="block text-white hover:text-emerald-400">Contact</a>
+    <a href="#get-started" class="block bg-emerald-500 hover:bg-emerald-600 text-white text-center py-2 rounded-full transition">Get Started</a>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="text-center mt-24 px-4">
+  <h2 class="text-5xl font-extrabold mb-4">
+    Next-Gen
+    <span class="relative inline-block text-white bg-gradient-to-r from-sky-400 to-violet-500 px-4 py-1 rounded-lg shadow-md animate-pulse">
+      IT Services
+      <span class="absolute left-0 bottom-0 w-full h-1 bg-white opacity-70 rounded-full animate-ping"></span>
+    </span>
+    for Modern Needs
+  </h2>
+  <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-6">
+    SPEDTEK brings smart infrastructure, system support, and secure solutions.
+  </p>
+  <a href="#services" class="bg-emerald-500 text-white px-6 py-3 rounded-full hover:bg-emerald-600 transition">Get Started</a>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="mt-32 px-6">
+  <h2 class="text-4xl font-bold text-center mb-12 text-sky-300">Our Services</h2>
+  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <div class="glass p-6 rounded-xl shadow-md hover:shadow-lg transition">
+      <h3 class="text-2xl font-semibold text-emerald-400 mb-2">💻 IT Infrastructure</h3>
+      <p class="text-slate-300">Complete infrastructure setup and enterprise-grade solutions for modern businesses.</p>
+    </div>
+    <div class="glass p-6 rounded-xl shadow-md hover:shadow-lg transition">
+      <h3 class="text-2xl font-semibold text-emerald-400 mb-2">🖨️ Hardware & Peripherals</h3>
+      <p class="text-slate-300">Business computers, printers, routers and IT accessories at competitive pricing.</p>
+    </div>
+    <div class="glass p-6 rounded-xl shadow-md hover:shadow-lg transition">
+      <h3 class="text-2xl font-semibold text-emerald-400 mb-2">🔒 Networking & Security</h3>
+      <p class="text-slate-300">Wired/wireless LAN, CCTV surveillance, firewall, and access control solutions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="mt-32 px-6 text-center max-w-4xl mx-auto">
+  <h2 class="text-4xl font-bold mb-4 text-sky-400">Why Choose SPEDTEK?</h2>
+  <p class="text-slate-300 text-lg">
+    At SPEDTEK, we merge innovation with reliability. With years of industry experience,
+    we help businesses run smarter with end-to-end IT support, secure networks,
+    and cutting-edge hardware. Your growth is our mission.
+  </p>
+</section>
+
+<!-- Testimonials Section -->
+<section class="mt-32 px-6 max-w-6xl mx-auto">
+  <h2 class="text-4xl font-bold text-center mb-12 text-sky-300">What Our Clients Say</h2>
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="glass p-6 rounded-xl shadow-md">
+      <p class="text-slate-100">“SPEDTEK completely transformed our IT setup. Fast, secure, and reliable!”</p>
+      <p class="mt-4 font-semibold text-emerald-400">— Rahul S., Retail Chain Owner</p>
+    </div>
+    <div class="glass p-6 rounded-xl shadow-md">
+      <p class="text-slate-100">“Their networking team is top-notch. We’ve had zero downtime since onboarding.”</p>
+      <p class="mt-4 font-semibold text-emerald-400">— Neha G., COO, Logistics Firm</p>
+    </div>
+    <div class="glass p-6 rounded-xl shadow-md">
+      <p class="text-slate-100">“A trustworthy partner for all things tech. Highly recommended!”</p>
+      <p class="mt-4 font-semibold text-emerald-400">— Karan M., Cafe Chain Manager</p>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="mt-32 px-6 text-center">
+  <div class="glass max-w-4xl mx-auto p-10 rounded-xl shadow-lg">
+    <h2 class="text-3xl font-bold mb-4 text-violet-400">Ready to Upgrade Your IT?</h2>
+    <p class="text-slate-300 mb-6">Get a free consultation or schedule a demo with our experts.</p>
+    <a href="#contact" class="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 rounded-full font-semibold transition">Let's Talk</a>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="mt-32 px-6 text-center max-w-3xl mx-auto">
+  <h2 class="text-4xl font-bold mb-4 text-sky-400">Let’s Connect</h2>
+  <p class="text-slate-300 text-lg mb-6">
+    Have questions or need a quote? Our team is ready to help. Get in touch today!
+  </p>
+  <a href="mailto:contact@spedtek.in" class="bg-white text-slate-900 font-semibold px-6 py-3 rounded-full hover:bg-slate-200 transition">Email Us</a>
+</section>
+
+<!-- Stats Section -->
+<section class="mt-32 px-6 text-center">
+  <h2 class="text-4xl font-bold mb-12 text-sky-300">Our Impact</h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+    <div>
+      <h3 class="text-5xl font-bold text-violet-400" data-count="150+">0</h3>
+      <p class="mt-2 text-slate-300">Clients Served</p>
+    </div>
+    <div>
+      <h3 class="text-5xl font-bold text-violet-400" data-count="300+">0</h3>
+      <p class="mt-2 text-slate-300">Projects Delivered</p>
+    </div>
+    <div>
+      <h3 class="text-5xl font-bold text-violet-400" data-count="500+">0</h3>
+      <p class="mt-2 text-slate-300">Devices Installed</p>
+    </div>
+    <div>
+      <h3 class="text-5xl font-bold text-violet-400" data-count="10+">0</h3>
+      <p class="mt-2 text-slate-300">Years Experience</p>
+    </div>
+  </div>
+</section>
+
+<!-- Logo Carousel -->
+<section class="mt-32 px-6 text-center">
+  <h2 class="text-4xl font-bold mb-12 text-sky-300">Trusted By</h2>
+  <div class="overflow-hidden whitespace-nowrap max-w-6xl mx-auto py-4 animate-scroll">
+    <img src="https://via.placeholder.com/120x60?text=Client+1" class="inline-block mx-6" />
+    <img src="https://via.placeholder.com/120x60?text=Client+2" class="inline-block mx-6" />
+    <img src="https://via.placeholder.com/120x60?text=Client+3" class="inline-block mx-6" />
+    <img src="https://via.placeholder.com/120x60?text=Client+4" class="inline-block mx-6" />
+    <img src="https://via.placeholder.com/120x60?text=Client+5" class="inline-block mx-6" />
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center text-sm text-slate-500 py-6 mt-24">
+  &copy; 2025 SPEDTEK. All rights reserved.
+</footer>
+
+<!-- Scroll To Top -->
+<button id="scrollToTopBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</button>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 1000, once: true });</script>
+<script>
+  tsParticles.load("tsparticles", {
+    fpsLimit: 60,
+    particles: {
+      number: { value: 80 },
+      size: { value: 3 },
+      move: { enable: true, speed: 2 },
+      color: { value: "#ffffff" },
+      links: {
+        enable: true,
+        distance: 150,
+        color: "#ffffff",
+        opacity: 0.4,
+        width: 1
+      }
+    },
+    interactivity: {
+      events: {
+        onHover: { enable: true, mode: "grab" },
+        onClick: { enable: true, mode: "push" }
+      },
+      modes: {
+        grab: { distance: 200, links: { opacity: 0.5 } },
+        push: { quantity: 4 }
+      }
+    },
+    detectRetina: true
+  });
+</script>
+<script>
+  const scrollBtn = document.getElementById("scrollToTopBtn");
+  window.addEventListener("scroll", () => {
+    scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+  });
+
+  document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+
+  // Theme Toggle
+  const toggleBtn = document.getElementById("themeToggle");
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("bg-white");
+    document.body.classList.toggle("text-slate-900");
+    document.body.classList.toggle("text-slate-100");
+    document.body.classList.toggle("bg-slate-900");
+  });
+</script>
+</body>
+</html>
