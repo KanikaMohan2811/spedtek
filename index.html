@@ -48,12 +48,19 @@
       display: none;
       z-index: 1000;
     }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .animate-scroll {
+      animation: scroll 30s linear infinite;
+    }
   </style>
 </head>
 <body class="transition-colors duration-300 bg-slate-900 text-slate-100">
 <div id="tsparticles"></div>
-
-
 
 <!-- Navbar -->
 <header class="sticky top-0 z-50 bg-gradient-to-r from-slate-800 via-indigo-900 to-slate-900 shadow-lg backdrop-blur-md">
@@ -77,7 +84,6 @@
             <path d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
-        
       </div>
     </div>
   </div>
@@ -154,7 +160,7 @@
 </section>
 
 <!-- Call to Action -->
-<section class="mt-32 px-6 text-center">
+<section id="get-started" class="mt-32 px-6 text-center">
   <div class="glass max-w-4xl mx-auto p-10 rounded-xl shadow-lg">
     <h2 class="text-3xl font-bold mb-4 text-violet-400">Ready to Upgrade Your IT?</h2>
     <p class="text-slate-300 mb-6">Get a free consultation or schedule a demo with our experts.</p>
@@ -176,19 +182,19 @@
   <h2 class="text-4xl font-bold mb-12 text-sky-300">Our Impact</h2>
   <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
     <div>
-      <h3 class="text-5xl font-bold text-violet-400" data-count="150+">0</h3>
+      <h3 class="text-5xl font-bold text-violet-400">150+</h3>
       <p class="mt-2 text-slate-300">Clients Served</p>
     </div>
     <div>
-      <h3 class="text-5xl font-bold text-violet-400" data-count="300+">0</h3>
+      <h3 class="text-5xl font-bold text-violet-400">300+</h3>
       <p class="mt-2 text-slate-300">Projects Delivered</p>
     </div>
     <div>
-      <h3 class="text-5xl font-bold text-violet-400" data-count="500+">0</h3>
+      <h3 class="text-5xl font-bold text-violet-400">500+</h3>
       <p class="mt-2 text-slate-300">Devices Installed</p>
     </div>
     <div>
-      <h3 class="text-5xl font-bold text-violet-400" data-count="10+">0</h3>
+      <h3 class="text-5xl font-bold text-violet-400">10+</h3>
       <p class="mt-2 text-slate-300">Years Experience</p>
     </div>
   </div>
@@ -226,14 +232,12 @@
       move: {
         enable: true,
         speed: 2,
-        direction: "none", // random directions
-        outModes: {
-          default: "out" // allows particles to exit the canvas and be replaced
-        },
+        direction: "none",
+        outModes: { default: "out" },
         straight: false,
         random: true
       },
-      color: { value: "#ff0000" }, // bright red
+      color: { value: "#ff0000" },
       opacity: {
         value: 1,
         random: true
@@ -260,22 +264,17 @@
       }
     },
     detectRetina: true,
-    background: {
-      color: "transparent"
-    }
+    background: { color: "transparent" }
   }).then(() => {
-    // Add parallax effect
     const container = document.getElementById('tsparticles');
     document.addEventListener('mousemove', (e) => {
-      const strength = 40; // smoother movement
+      const strength = 40;
       const x = (e.clientX / window.innerWidth - 0.5) * strength;
       const y = (e.clientY / window.innerHeight - 0.5) * strength;
       container.style.transform = `translate(${x}px, ${y}px)`;
     });
   });
-</script>
 
-<script>
   const scrollBtn = document.getElementById("scrollToTopBtn");
   window.addEventListener("scroll", () => {
     scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
@@ -283,15 +282,6 @@
 
   document.getElementById('mobileMenuBtn').addEventListener('click', () => {
     document.getElementById('mobileMenu').classList.toggle('hidden');
-  });
-
-  // Theme Toggle
-  const toggleBtn = document.getElementById("themeToggle");
-  toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("bg-white");
-    document.body.classList.toggle("text-slate-900");
-    document.body.classList.toggle("text-slate-100");
-    document.body.classList.toggle("bg-slate-900");
   });
 </script>
 </body>
