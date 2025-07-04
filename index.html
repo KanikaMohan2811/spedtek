@@ -219,11 +219,16 @@
 <script>
   tsParticles.load("tsparticles", {
     fpsLimit: 60,
+    fullScreen: { enable: false }, // we'll control canvas ourselves
     particles: {
       number: { value: 80 },
       size: { value: 3 },
-      move: { enable: true, speed: 1 },
+      move: { enable: true, speed: 1.5 },
       color: { value: "#ffffff" },
+      opacity: {
+        value: 0.2,
+        random: false
+      },
       links: {
         enable: true,
         distance: 150,
@@ -243,8 +248,18 @@
       }
     },
     detectRetina: true
+  }).then(() => {
+    // Add parallax effect
+    const container = document.getElementById('tsparticles');
+    document.addEventListener('mousemove', (e) => {
+      const strength = 20; // adjust strength of parallax
+      const x = (e.clientX / window.innerWidth - 0.5) * strength;
+      const y = (e.clientY / window.innerHeight - 0.5) * strength;
+      container.style.transform = `translate(${x}px, ${y}px)`;
+    });
   });
 </script>
+
 <script>
   const scrollBtn = document.getElementById("scrollToTopBtn");
   window.addEventListener("scroll", () => {
