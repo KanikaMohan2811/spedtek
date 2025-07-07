@@ -49,19 +49,26 @@
       z-index: 1000;
     }
 
-    @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-scroll {
-  animation: scroll 3s linear infinite;
-  white-space: nowrap;
+  animation: scroll 20s linear infinite;
 }
 
-.animate-scroll:hover {
-  animation-play-state: paused; /* Optional: pause scroll on hover */
+.scroll-track {
+  display: flex;
+  width: max-content;
 }
+
+
   </style>
 </head>
 <body class="transition-colors duration-300 bg-slate-900 text-slate-100">
@@ -205,12 +212,11 @@
   </div>
 </section>
 
-<!-- Logo Carousel -->
 <section class="mt-32 px-6 text-center">
   <h2 class="text-4xl font-bold mb-12 text-sky-300">Trusted By</h2>
-  <div class="overflow-hidden whitespace-nowrap max-w-6xl mx-auto py-4 relative">
-    <div class="animate-scroll inline-block">
-      <!-- Original set -->
+  <div class="overflow-hidden max-w-6xl mx-auto py-4 relative">
+    <div class="scroll-track flex w-max animate-scroll">
+      <!-- Original logos -->
       <img src="https://www.bharatpetroleum.in/images/BPCL-energising-English-logo.jpg" alt="BPCL" class="inline-block mx-6 h-16" />
       <img src="https://cdn.brandfetch.io/ido_65sFN7/idopubJKB5.svg?c=1dxbfHSJFAPEGdCLU4o5B" alt="HPCL" class="inline-block mx-6 h-16" />
       <img src="https://www.nayaraenergy.com/images/logo.png" alt="Nayara" class="inline-block mx-6 h-16" />
@@ -218,7 +224,7 @@
       <img src="https://uhf.microsoft.com/images/microsoft/RE1Mu3b.png" alt="Microsoft" class="inline-block mx-6 h-16" />
       <img src="https://cdn1.byjus.com/byjusweb/img/home/image/Akash.png" alt="Byju's" class="inline-block mx-6 h-16" />
 
-      <!-- Duplicate set for seamless loop -->
+      <!-- Duplicate logos for seamless loop -->
       <img src="https://www.bharatpetroleum.in/images/BPCL-energising-English-logo.jpg" alt="BPCL" class="inline-block mx-6 h-16" />
       <img src="https://cdn.brandfetch.io/ido_65sFN7/idopubJKB5.svg?c=1dxbfHSJFAPEGdCLU4o5B" alt="HPCL" class="inline-block mx-6 h-16" />
       <img src="https://www.nayaraenergy.com/images/logo.png" alt="Nayara" class="inline-block mx-6 h-16" />
@@ -228,6 +234,7 @@
     </div>
   </div>
 </section>
+
 
 
 
