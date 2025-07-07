@@ -268,7 +268,7 @@
   }).then(() => {
     const container = document.getElementById('tsparticles');
     document.addEventListener('mousemove', (e) => {
-      const strength = 80;
+      const strength = 150;
       const x = (e.clientX / window.innerWidth - 0.5) * strength;
       const y = (e.clientY / window.innerHeight - 0.5) * strength;
       container.style.transform = `translate(${x}px, ${y}px)`;
